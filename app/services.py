@@ -3,7 +3,9 @@ import hashlib
 import httpx
 import redis.asyncio as redis
 
-from app.config import settings
+from app.config import get_settings
+
+settings = get_settings()
 
 try:
     redis_client = redis.from_url(
