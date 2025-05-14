@@ -1,16 +1,17 @@
 version: "3.8"
 services:
   web:
-    # image: sharmaarnav/12-factor-app:latest
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
+      - "8001:8001"
     env_file:
       - .env
     networks:
       - 12-factor-app
+
   redis:
     image: redis:7
     networks:
