@@ -7,6 +7,7 @@ import pytest
 async def test_convert_endpoint_success(client):
     """Test successful currency conversion"""
     mock_result = {"converted_amount": 100.0, "cached": False}
+
     with patch("app.api.convert_currency", AsyncMock(return_value=mock_result)):
         response = client.get("/convert?from_currency=USD&to_currency=EUR&amount=50")
         assert response.status_code == 200
