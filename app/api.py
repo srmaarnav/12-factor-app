@@ -12,5 +12,5 @@ async def convert(from_currency: str, to_currency: str, amount: float):
         return await convert_currency(from_currency, to_currency, amount)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
-    except Exception as e:
-        raise HTTPException(status_code=500, detail="Internal server error")
+    except ConnectionError as ce:
+        raise HTTPException(status_code=400, detail=str(ce))

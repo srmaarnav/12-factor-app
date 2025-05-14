@@ -10,7 +10,7 @@ async def test_convert_endpoint_success(client):
     with patch("app.api.convert_currency", AsyncMock(return_value=mock_result)):
         response = client.get("/convert?from_currency=USD&to_currency=EUR&amount=50")
         assert response.status_code == 200
-        assert response.json() == {"converted_amount": mock_result}
+        assert response.json() == mock_result
 
 
 @pytest.mark.asyncio
