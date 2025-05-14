@@ -3,8 +3,6 @@ from unittest.mock import MagicMock, patch
 import pytest
 from fastapi.testclient import TestClient
 
-from app.main import app
-
 # Create mock settings
 mock_settings = MagicMock(
     api_base_url="https://mock-api.com",
@@ -20,4 +18,6 @@ def client():
     with patch("app.services.redis_client"), patch(
         "app.config.settings", mock_settings
     ):
+        from app.main import app
+
         yield TestClient(app)
