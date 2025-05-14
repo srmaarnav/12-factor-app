@@ -35,6 +35,13 @@ cp .env.example .env
 docker compose up --build
 ```
 
+The services will be available at:
+
+- API: http://localhost:8000
+- Documentation: http://localhost:8001
+- API Swagger UI: http://localhost:8000/docs
+- API ReDoc: http://localhost:8000/redoc
+
 ### Local Development
 
 1. Create and activate virtual environment:
@@ -127,9 +134,15 @@ pytest tests/
 
 ### Documentation
 
-Build documentation with:
+Documentation is available in two ways:
+
+1. Live Documentation (when running with Docker):
+
+   - Visit http://localhost:8001
+
+2. Local Development:
 
 ```bash
 mkdocs build
-mkdocs serve  # For development
+mkdocs serve  # Serves at http://localhost:8000
 ```
