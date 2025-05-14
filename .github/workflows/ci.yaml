@@ -19,7 +19,7 @@ jobs:
           -e api_key=supersecret \
           -e redis_host=localhost \
           -e redis_port=6379 \
-          your-image-name pytest tests/ --disable-warnings
+          sharmaarnav/12-factor-app:${{ github.sha}} pytest tests/ --disable-warnings
 
       - name: Push Image to Docker Hub
         run: |
