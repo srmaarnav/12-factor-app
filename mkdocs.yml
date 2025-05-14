@@ -1,0 +1,32 @@
+site_name: Currency Converter API
+theme:
+  name: material
+  palette:
+    primary: teal
+    accent: deep orange
+
+nav:
+  - Home: index.md
+  - API Reference:
+      - Overview: api/index.md
+  - Development:
+      - Setup: development/setup.md
+      - Testing: development/testing.md
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+
+repo_url: https://github.com/srmaarnav/12-factor-app
+repo_name: 12-factor-app
